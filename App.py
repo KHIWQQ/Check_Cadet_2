@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import mysql.connector
 
 
 class Ui_MainWindow(object):
@@ -219,3 +220,283 @@ class Ui_MainWindow(object):
         self.ucom_out.setText(_translate("MainWindow", "กองร้อย"))
         self.uname_out.setText(_translate("MainWindow", "ชื่อ"))
         self.uid_out.setText(_translate("MainWindow", "หมายเลข"))
+
+    # Click Button
+        self.out_send.clicked.connect(self.clickout)
+        self.in_send.clicked.connect(self.clickin)
+
+    # Show data Company 1
+        # Done
+        self.all1.setPlaceholderText(com1all())
+        self.active1.setPlaceholderText(com1out())
+        self.remain1.setPlaceholderText(com1remain())
+
+    # Show data Company 2
+        # Done
+        self.all2.setPlaceholderText(com2all())
+        self.active2.setPlaceholderText(com2out())
+        self.remain2.setPlaceholderText(com2remain())
+
+    # Show data Company 3
+        # Done
+        self.all3.setPlaceholderText(com3all())
+        self.active3.setPlaceholderText(com3out())
+        self.remain3.setPlaceholderText(com3remain())
+
+# Function GUI && DATABASE
+    def clickout(self):
+        print("click out")
+        id = self.uid_out_show.toPlainText()
+        uname = self.uname_out_show.toPlainText()
+        lname = self.sname_out_show.toPlainText()
+        com = self.ucom_out_show.toPlainText()
+        print(id + uname + lname + com)
+        outbatt(id)
+        # Show data Company 1
+        # Done
+        self.all1.setPlaceholderText(com1all())
+        self.active1.setPlaceholderText(com1out())
+        self.remain1.setPlaceholderText(com1remain())
+
+        # Show data Company 2
+        # Done
+        self.all2.setPlaceholderText(com2all())
+        self.active2.setPlaceholderText(com2out())
+        self.remain2.setPlaceholderText(com2remain())
+
+        # Show data Company 3
+        # Done
+        self.all3.setPlaceholderText(com3all())
+        self.active3.setPlaceholderText(com3out())
+        self.remain3.setPlaceholderText(com3remain())
+    def clickin(self):
+        print("click in")
+        id = self.uid_in_show.toPlainText()
+        uname = self.uname_in_show.toPlainText()
+        lname = self.sname_in_show.toPlainText()
+        com = self.ucom_in_show.toPlainText()
+        print(id + uname + lname + com)
+        insertorup(id,uname,lname,com)
+        # Show data Company 1
+        # Done
+        self.all1.setPlaceholderText(com1all())
+        self.active1.setPlaceholderText(com1out())
+        self.remain1.setPlaceholderText(com1remain())
+
+        # Show data Company 2
+        # Done
+        self.all2.setPlaceholderText(com2all())
+        self.active2.setPlaceholderText(com2out())
+        self.remain2.setPlaceholderText(com2remain())
+
+        # Show data Company 3
+        # Done
+        self.all3.setPlaceholderText(com3all())
+        self.active3.setPlaceholderText(com3out())
+        self.remain3.setPlaceholderText(com3remain())
+
+# Database
+# Done
+def ConnectorMysql():
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        passwd="",
+        database="cadet",
+        # auth_plugin='mysql_native_password'
+    )
+    print('Connect Database Successful')
+    return mydb
+
+# Done
+def insertin(id,uname,lname,com):
+    print("insert in")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'INSERT INTO `batt`(`id`, `name`, `lname`, `com`, `stay`, `outc`) VALUES ({id},"{uname}","{lname}",{com},1,0);'
+    print(sql)
+    print("Insert into success!!")
+    cur.execute(sql)
+    db.commit()
+    db.close()
+
+# Done
+def inbatt(id):
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'UPDATE `batt` SET `stay`=1,`outc`=0 WHERE id="{id}"'
+    print("Check in success!!")
+    cur.execute(sql)
+    db.commit()
+    db.close()
+
+# Done
+def outbatt(id):
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'UPDATE `batt` SET `stay`=0,`outc`=1 WHERE id="{id}"'
+    print(sql)
+    print("Check out success!!")
+    cur.execute(sql)
+    db.commit()
+    db.close()
+
+# Done
+def insertorup(id,uname,lname,com):
+    print(id,uname,lname,com)
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT * FROM batt WHERE id="{id}"'
+    print("dump databasesuccess!!")
+    print(sql)
+    cur.execute(sql)
+    myresult = cur.fetchall()
+
+    print(myresult)
+    if len(myresult) != 0 :
+        print("send to inbatt fn")
+        inbatt(id)
+    else:
+        print("send to insert fn")
+        insertin(id, uname, lname, com)
+
+def com1all():
+    print("com1 all")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(stay+outc) FROM `batt` WHERE com=1'
+    print("com1_all success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+def com1stay():
+    print("com1 stay")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(stay) FROM `batt` WHERE com=1'
+    print("com1_stay success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+def com1out():
+    print("com1 out")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(outc) FROM `batt` WHERE com=1'
+    print("com1_out success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+def com1remain():
+    print("com1 remain")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(stay) FROM `batt` WHERE com=1'
+    print("com1_remain success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+def com2all():
+    print("com2 all")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(stay+outc) FROM `batt` WHERE com=2'
+    print("com2_all success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+def com2stay():
+    print("com2 stay")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(stay) FROM `batt` WHERE com=2'
+    print("com2_stay success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+def com2out():
+    print("com2 out")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(outc) FROM `batt` WHERE com=2'
+    print("com2_out success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+def com2remain():
+    print("com2 remain")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(stay) FROM `batt` WHERE com=2'
+    print("com2_remain success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+def com3all():
+    print("com3 all")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(stay+outc) FROM `batt` WHERE com=3'
+    print("com3_all success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+def com3stay():
+    print("com3 stay")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(stay) FROM `batt` WHERE com=3'
+    print("com3_stay success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+def com3out():
+    print("com3 out")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(outc) FROM `batt` WHERE com=3'
+    print("com3_out success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+def com3remain():
+    print("com3 remain")
+    db = ConnectorMysql()
+    cur = db.cursor()
+    sql = f'SELECT SUM(stay) FROM `batt` WHERE com=3'
+    print("com3_remain success!!")
+    cur.execute(sql)
+    myresult = cur.fetchall()
+    x = str(myresult[0][0])
+    return x
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
