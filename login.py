@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(465, 232)
+        MainWindow.resize(465, 250)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
@@ -37,12 +37,15 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout(self.widget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
+        self.username = QtWidgets.QLineEdit(self.widget)
+        self.username.setObjectName("username")
+        self.gridLayout.addWidget(self.username, 0, 1, 1, 1)
+        self.password = QtWidgets.QLineEdit(self.widget)
+        self.password.setObjectName("password")
+        self.gridLayout.addWidget(self.password, 1, 1, 1, 1)    
         self.login = QtWidgets.QPushButton(self.widget)
         self.login.setObjectName("login")
         self.gridLayout.addWidget(self.login, 2, 1, 1, 1)
-        self.password = QtWidgets.QLineEdit(self.widget)
-        self.password.setObjectName("password")
-        self.gridLayout.addWidget(self.password, 1, 1, 1, 1)
    
         
         # self.login.clicked.connect(self.openWindow)
@@ -54,9 +57,6 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.widget)
         self.label_2.setObjectName("label_2")
         self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
-        self.username = QtWidgets.QLineEdit(self.widget)
-        self.username.setObjectName("username")
-        self.gridLayout.addWidget(self.username, 0, 1, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 465, 21))
@@ -83,8 +83,6 @@ class Ui_MainWindow(object):
         password = self.password.text()
         user(username, password, self)
         
-        
-    
 
 def ConnectorMysql():
     mydb = mysql.connector.connect(
