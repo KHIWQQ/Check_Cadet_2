@@ -104,17 +104,24 @@ def user(username,password,self):
     sql = f'SELECT `pass` FROM `user` WHERE `user`="{username}"'
     cur.execute(sql)
     myresult = cur.fetchall()
-    x = str(myresult[0][0])
-    passwd = password
+    print(myresult)
     
-    if passwd == x:
-        print("login")
-        self.openWindow()
+    if myresult != []:
+        x = str(myresult[0][0])
+        passwd = password
+        
+        if passwd == x:
+            print("login")
+            self.openWindow()
+        else:
+            print("fail") 
+            msg = QMessageBox()
+            msg.setText('Incorrect Password')
+            msg.exec_()
     else:
-        print("fail") 
         msg = QMessageBox()
         msg.setText('Incorrect Password')
-        msg.exec_()
+        msg.exec_()        
     return 
 
 if __name__ == "__main__":
