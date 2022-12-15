@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\EP\Check_Cadet_2\ui\outbatt.ui'
+# Form implementation generated from reading ui file 'D:\EP\Check_Cadet_2\outbatt.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -15,7 +15,6 @@ class Ui_OutbattWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(707, 217)
-        MainWindow.setStyleSheet("background-color: rgb(255, 98, 98);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
@@ -25,36 +24,27 @@ class Ui_OutbattWindow(object):
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
         self.sname_out = QtWidgets.QLabel(self.layoutWidget)
-        self.sname_out.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.sname_out.setObjectName("sname_out")
         self.gridLayout.addWidget(self.sname_out, 0, 2, 1, 1)
         self.ucom_out = QtWidgets.QLabel(self.layoutWidget)
-        self.ucom_out.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.ucom_out.setObjectName("ucom_out")
         self.gridLayout.addWidget(self.ucom_out, 0, 3, 1, 1)
         self.uname_out = QtWidgets.QLabel(self.layoutWidget)
-        self.uname_out.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.uname_out.setObjectName("uname_out")
         self.gridLayout.addWidget(self.uname_out, 0, 1, 1, 1)
         self.uid_out = QtWidgets.QLabel(self.layoutWidget)
-        self.uid_out.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.uid_out.setObjectName("uid_out")
         self.gridLayout.addWidget(self.uid_out, 0, 0, 1, 1)
         self.uid_out_show = QtWidgets.QTextEdit(self.layoutWidget)
-        self.uid_out_show.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.uid_out_show.setObjectName("uid_out_show")
         self.gridLayout.addWidget(self.uid_out_show, 1, 0, 1, 1)
         self.uname_out_show = QtWidgets.QTextEdit(self.layoutWidget)
-        self.uname_out_show.setStyleSheet("background-color: rgb(255, 255, 127);\n"
-"")
         self.uname_out_show.setObjectName("uname_out_show")
         self.gridLayout.addWidget(self.uname_out_show, 1, 1, 1, 1)
         self.ucom_out_show = QtWidgets.QTextEdit(self.layoutWidget)
-        self.ucom_out_show.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.ucom_out_show.setObjectName("ucom_out_show")
         self.gridLayout.addWidget(self.ucom_out_show, 1, 3, 1, 1)
         self.sname_out_show = QtWidgets.QTextEdit(self.layoutWidget)
-        self.sname_out_show.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.sname_out_show.setObjectName("sname_out_show")
         self.gridLayout.addWidget(self.sname_out_show, 1, 2, 1, 1)
         self.out_title = QtWidgets.QLabel(self.centralwidget)
@@ -62,11 +52,10 @@ class Ui_OutbattWindow(object):
         self.out_title.setObjectName("out_title")
         self.out_send = QtWidgets.QPushButton(self.centralwidget)
         self.out_send.setGeometry(QtCore.QRect(600, 70, 91, 41))
-        self.out_send.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.out_send.setObjectName("out_send")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 707, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 707, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -86,9 +75,9 @@ class Ui_OutbattWindow(object):
         self.out_title.setText(_translate("MainWindow", "นนร.ออก"))
         self.out_send.setText(_translate("MainWindow", "send"))
 
+        ###
         self.out_send.clicked.connect(self.clickout)
-        
-        
+    
     def clickout(self):
         print("click out")
         id = self.uid_out_show.toPlainText()

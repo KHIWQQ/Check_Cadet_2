@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 98, 98);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -26,6 +29,9 @@
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="2">
       <widget class="QLabel" name="sname_out">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 0);</string>
+       </property>
        <property name="text">
         <string>สกุล</string>
        </property>
@@ -33,6 +39,9 @@
      </item>
      <item row="0" column="3">
       <widget class="QLabel" name="ucom_out">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 0);</string>
+       </property>
        <property name="text">
         <string>กองร้อย</string>
        </property>
@@ -40,6 +49,9 @@
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="uname_out">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 0);</string>
+       </property>
        <property name="text">
         <string>ชื่อ</string>
        </property>
@@ -47,22 +59,42 @@
      </item>
      <item row="0" column="0">
       <widget class="QLabel" name="uid_out">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 0);</string>
+       </property>
        <property name="text">
         <string>หมายเลข</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QTextEdit" name="uid_out_show"/>
+      <widget class="QTextEdit" name="uid_out_show">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 127);</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QTextEdit" name="uname_out_show"/>
+      <widget class="QTextEdit" name="uname_out_show">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 127);
+</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="3">
-      <widget class="QTextEdit" name="ucom_out_show"/>
+      <widget class="QTextEdit" name="ucom_out_show">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 127);</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="2">
-      <widget class="QTextEdit" name="sname_out_show"/>
+      <widget class="QTextEdit" name="sname_out_show">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 127);</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -88,6 +120,9 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 0);</string>
+    </property>
     <property name="text">
      <string>send</string>
     </property>
@@ -99,7 +134,7 @@
      <x>0</x>
      <y>0</y>
      <width>707</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\EP\Check_Cadet_2\ui\inbatt.ui'
+# Form implementation generated from reading ui file 'D:\EP\Check_Cadet_2\inbatt.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -15,7 +15,6 @@ class Ui_InbattWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(707, 218)
-        MainWindow.setStyleSheet("background-color: rgb(255, 98, 98);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.in_title = QtWidgets.QLabel(self.centralwidget)
@@ -23,7 +22,6 @@ class Ui_InbattWindow(object):
         self.in_title.setObjectName("in_title")
         self.in_send = QtWidgets.QPushButton(self.centralwidget)
         self.in_send.setGeometry(QtCore.QRect(600, 70, 91, 41))
-        self.in_send.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.in_send.setObjectName("in_send")
         self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.layoutWidget.setGeometry(QtCore.QRect(30, 40, 551, 98))
@@ -32,40 +30,32 @@ class Ui_InbattWindow(object):
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.sname_in = QtWidgets.QLabel(self.layoutWidget)
-        self.sname_in.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.sname_in.setObjectName("sname_in")
         self.gridLayout_2.addWidget(self.sname_in, 0, 2, 1, 1)
         self.uname_in = QtWidgets.QLabel(self.layoutWidget)
-        self.uname_in.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.uname_in.setObjectName("uname_in")
         self.gridLayout_2.addWidget(self.uname_in, 0, 1, 1, 1)
         self.ucom_in = QtWidgets.QLabel(self.layoutWidget)
-        self.ucom_in.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.ucom_in.setObjectName("ucom_in")
         self.gridLayout_2.addWidget(self.ucom_in, 0, 3, 1, 1)
         self.uid_in = QtWidgets.QLabel(self.layoutWidget)
-        self.uid_in.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.uid_in.setObjectName("uid_in")
         self.gridLayout_2.addWidget(self.uid_in, 0, 0, 1, 1)
         self.uname_in_show = QtWidgets.QTextEdit(self.layoutWidget)
-        self.uname_in_show.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.uname_in_show.setObjectName("uname_in_show")
         self.gridLayout_2.addWidget(self.uname_in_show, 1, 1, 1, 1)
         self.uid_in_show = QtWidgets.QTextEdit(self.layoutWidget)
-        self.uid_in_show.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.uid_in_show.setObjectName("uid_in_show")
         self.gridLayout_2.addWidget(self.uid_in_show, 1, 0, 1, 1)
         self.sname_in_show = QtWidgets.QTextEdit(self.layoutWidget)
-        self.sname_in_show.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.sname_in_show.setObjectName("sname_in_show")
         self.gridLayout_2.addWidget(self.sname_in_show, 1, 2, 1, 1)
         self.ucom_in_show = QtWidgets.QTextEdit(self.layoutWidget)
-        self.ucom_in_show.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.ucom_in_show.setObjectName("ucom_in_show")
         self.gridLayout_2.addWidget(self.ucom_in_show, 1, 3, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 707, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 707, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -74,6 +64,7 @@ class Ui_InbattWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -85,10 +76,9 @@ class Ui_InbattWindow(object):
         self.ucom_in.setText(_translate("MainWindow", "กองร้อย"))
         self.uid_in.setText(_translate("MainWindow", "หมายเลข"))
 
-         ### Click Button
+
+        ### Click Button
         self.in_send.clicked.connect(self.clickin)
-        
-        
         
     def clickin(self):
         print("click in")

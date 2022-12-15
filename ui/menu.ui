@@ -13,8 +13,11 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 98, 98);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -26,6 +29,9 @@
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
       <widget class="QPushButton" name="button_inbatt">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 0);</string>
+       </property>
        <property name="text">
         <string>เข้ากองพัน</string>
        </property>
@@ -46,6 +52,9 @@
      </item>
      <item row="2" column="0">
       <widget class="QPushButton" name="button_outbatt">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 0);</string>
+       </property>
        <property name="text">
         <string>ออกกองพัน</string>
        </property>
@@ -66,6 +75,9 @@
      </item>
      <item row="4" column="0">
       <widget class="QPushButton" name="button_show">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 0);</string>
+       </property>
        <property name="text">
         <string>แสดงยอด</string>
        </property>
@@ -80,7 +92,7 @@
      <x>0</x>
      <y>0</y>
      <width>470</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

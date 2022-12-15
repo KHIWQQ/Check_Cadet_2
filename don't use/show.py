@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\EP\Check_Cadet_2\ui\show.ui'
+# Form implementation generated from reading ui file 'D:\EP\Check_Cadet_2\show.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -11,11 +11,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import mysql.connector
 
+
 class Ui_ShowWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(827, 255)
-        MainWindow.setStyleSheet("background-color: rgb(255, 98, 98);")
+        MainWindow.resize(707, 217)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
@@ -27,7 +27,6 @@ class Ui_ShowWindow(object):
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.com1_title = QtWidgets.QLabel(self.horizontalLayoutWidget)
-        self.com1_title.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.com1_title.setObjectName("com1_title")
         self.verticalLayout.addWidget(self.com1_title)
         self.formLayout = QtWidgets.QFormLayout()
@@ -36,21 +35,18 @@ class Ui_ShowWindow(object):
         self.label_2.setObjectName("label_2")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_2)
         self.all1 = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
-        self.all1.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.all1.setObjectName("all1")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.all1)
         self.label_3 = QtWidgets.QLabel(self.horizontalLayoutWidget)
         self.label_3.setObjectName("label_3")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_3)
         self.active1 = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
-        self.active1.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.active1.setObjectName("active1")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.active1)
         self.label_4 = QtWidgets.QLabel(self.horizontalLayoutWidget)
         self.label_4.setObjectName("label_4")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_4)
         self.remain1 = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
-        self.remain1.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.remain1.setObjectName("remain1")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.remain1)
         self.verticalLayout.addLayout(self.formLayout)
@@ -58,7 +54,6 @@ class Ui_ShowWindow(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.com2_title = QtWidgets.QLabel(self.horizontalLayoutWidget)
-        self.com2_title.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.com2_title.setObjectName("com2_title")
         self.verticalLayout_2.addWidget(self.com2_title)
         self.formLayout_2 = QtWidgets.QFormLayout()
@@ -67,21 +62,18 @@ class Ui_ShowWindow(object):
         self.label_7.setObjectName("label_7")
         self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_7)
         self.all2 = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
-        self.all2.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.all2.setObjectName("all2")
         self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.all2)
         self.label_8 = QtWidgets.QLabel(self.horizontalLayoutWidget)
         self.label_8.setObjectName("label_8")
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_8)
         self.active2 = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
-        self.active2.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.active2.setObjectName("active2")
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.active2)
         self.label_9 = QtWidgets.QLabel(self.horizontalLayoutWidget)
         self.label_9.setObjectName("label_9")
         self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_9)
         self.remain2 = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
-        self.remain2.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.remain2.setObjectName("remain2")
         self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.remain2)
         self.verticalLayout_2.addLayout(self.formLayout_2)
@@ -89,7 +81,6 @@ class Ui_ShowWindow(object):
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.com3_title = QtWidgets.QLabel(self.horizontalLayoutWidget)
-        self.com3_title.setStyleSheet("background-color: rgb(255, 255, 0);")
         self.com3_title.setObjectName("com3_title")
         self.verticalLayout_3.addWidget(self.com3_title)
         self.formLayout_3 = QtWidgets.QFormLayout()
@@ -98,28 +89,25 @@ class Ui_ShowWindow(object):
         self.label_11.setObjectName("label_11")
         self.formLayout_3.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_11)
         self.all3 = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
-        self.all3.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.all3.setObjectName("all3")
         self.formLayout_3.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.all3)
         self.label_12 = QtWidgets.QLabel(self.horizontalLayoutWidget)
         self.label_12.setObjectName("label_12")
         self.formLayout_3.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_12)
         self.active3 = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
-        self.active3.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.active3.setObjectName("active3")
         self.formLayout_3.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.active3)
         self.label_13 = QtWidgets.QLabel(self.horizontalLayoutWidget)
         self.label_13.setObjectName("label_13")
         self.formLayout_3.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_13)
         self.remain3 = QtWidgets.QLineEdit(self.horizontalLayoutWidget)
-        self.remain3.setStyleSheet("background-color: rgb(255, 255, 127);")
         self.remain3.setObjectName("remain3")
         self.formLayout_3.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.remain3)
         self.verticalLayout_3.addLayout(self.formLayout_3)
         self.horizontalLayout.addLayout(self.verticalLayout_3)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 827, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 707, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -144,7 +132,7 @@ class Ui_ShowWindow(object):
         self.label_11.setText(_translate("MainWindow", "ยอดเดิม"))
         self.label_12.setText(_translate("MainWindow", "จำหน่าย"))
         self.label_13.setText(_translate("MainWindow", "คงเหลือ"))
-        
+
     # Show data Company 1
         # Done
         self.all1.setPlaceholderText(com1all())

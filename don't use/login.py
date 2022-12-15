@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\EP\Check_Cadet_2\ui\login.ui'
+# Form implementation generated from reading ui file 'D:\EP\Check_Cadet_2\login.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -22,43 +22,44 @@ class Ui_MainWindow(object):
         self.ui.setupUi(self.window)
         MainWindow.hide()
         self.window.show()
-        
+    
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(465, 232)
-        MainWindow.setStyleSheet("background-color: rgb(255, 98, 98);")
+        MainWindow.resize(465, 250)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(200, 10, 181, 19))
+        self.label_3.setGeometry(QtCore.QRect(180, 10, 181, 19))
         self.label_3.setObjectName("label_3")
-        self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.layoutWidget.setGeometry(QtCore.QRect(110, 50, 244, 116))
-        self.layoutWidget.setObjectName("layoutWidget")
-        self.gridLayout = QtWidgets.QGridLayout(self.layoutWidget)
+        self.widget = QtWidgets.QWidget(self.centralwidget)
+        self.widget.setGeometry(QtCore.QRect(110, 50, 244, 116))
+        self.widget.setObjectName("widget")
+        self.gridLayout = QtWidgets.QGridLayout(self.widget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
-        self.password = QtWidgets.QLineEdit(self.layoutWidget)
-        self.password.setStyleSheet("background-color: rgb(255, 255, 127);")
-        self.password.setObjectName("password")
-        self.gridLayout.addWidget(self.password, 1, 1, 1, 1)
-        self.login = QtWidgets.QPushButton(self.layoutWidget)
-        self.login.setStyleSheet("background-color: rgb(255, 255, 0);")
-        self.login.setObjectName("login")
-        self.gridLayout.addWidget(self.login, 2, 1, 1, 1)
-        self.label = QtWidgets.QLabel(self.layoutWidget)
-        self.label.setObjectName("label")
-        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
-        self.label_2 = QtWidgets.QLabel(self.layoutWidget)
-        self.label_2.setObjectName("label_2")
-        self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
-        self.username = QtWidgets.QLineEdit(self.layoutWidget)
-        self.username.setStyleSheet("background-color: rgb(255, 255, 127);")
+        self.username = QtWidgets.QLineEdit(self.widget)
         self.username.setObjectName("username")
         self.gridLayout.addWidget(self.username, 0, 1, 1, 1)
+        self.password = QtWidgets.QLineEdit(self.widget)
+        self.password.setObjectName("password")
+        self.gridLayout.addWidget(self.password, 1, 1, 1, 1)    
+        self.login = QtWidgets.QPushButton(self.widget)
+        self.login.setObjectName("login")
+        self.gridLayout.addWidget(self.login, 2, 1, 1, 1)
+   
+        
+        # self.login.clicked.connect(self.openWindow)
+        self.login.clicked.connect(self.loginfunc)
+        
+        self.label = QtWidgets.QLabel(self.widget)
+        self.label.setObjectName("label")
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+        self.label_2 = QtWidgets.QLabel(self.widget)
+        self.label_2.setObjectName("label_2")
+        self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 465, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 465, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -67,9 +68,6 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        
-         # self.login.clicked.connect(self.openWindow)
-        self.login.clicked.connect(self.loginfunc)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -78,8 +76,7 @@ class Ui_MainWindow(object):
         self.login.setText(_translate("MainWindow", "Login"))
         self.label.setText(_translate("MainWindow", "username"))
         self.label_2.setText(_translate("MainWindow", "password"))
-
-     
+        
     def loginfunc(self):
         
         username = self.username.text()
