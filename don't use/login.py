@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 
 # from OtherWindow import Ui_OtherWindow
-from menu import Ui_MenwWindow
+from Check_Cadet.menu import Ui_MenwWindow
 import mysql.connector
 
 class Ui_MainWindow(object):

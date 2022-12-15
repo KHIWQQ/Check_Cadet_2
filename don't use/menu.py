@@ -9,9 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from inbatt import Ui_InbattWindow
-from outbatt import Ui_OutbattWindow
-from show import Ui_ShowWindow
+from Check_Cadet.inbatt import Ui_InbattWindow
+from Check_Cadet.outbatt import Ui_OutbattWindow
+from Check_Cadet.show import Ui_ShowWindow
 
 class Ui_MenwWindow(object):
     def openinbatt(self):
